@@ -1,0 +1,20 @@
+<extend name="Public:base"/>
+<block name="title">报告列表</block>
+<block name="main">
+    <div id="main">
+    <div style="margin:0 auto; width:1000px; height:800px; border:0px solid #ccc;">    
+  <div id="report" style="width:100%">
+               <h3><img src="__PUBLIC__/Index/images/dt.png" >用户报告列表</h3>
+               <div>
+    		   <ul>
+                       <li><span>用户姓名</span><span>专家姓名</span><span>生成报告时间</span></li>
+                       <volist name="list" id="vo">
+                           <li><a href="{:U('report/detail',array('id'=>handle($vo['id'])))}" target="_blank"><span>{$vo.from_userid|truename}</span><span>{$vo.to_userid|truename}</span><span>{$vo.date}</span></a></li>  
+                       </volist>
+                    </ul>              
+    		  <div id="page">{$page}</div>
+               </div>
+           </div>          
+    </div>              
+</div>
+</block> 

@@ -1,0 +1,87 @@
+<extend name="Public:base"/>
+<block name='diseasesmenu'>active</block>
+<block name='diseasessubmgr'>active</block>
+<block name="extjs">
+    <!-- Parsley -->
+    <script type="text/javascript" src="__APP__/public/ckeditor/ckeditor.js"></script>
+    <if condition="($act eq add) ">
+        <script type="text/javascript" src="__APP__/public/Admin/Js/adddiseases.js"></script>
+        <script type="text/javascript" src="__APP__/public/Admin/Js/jquery.validate.js"></script>
+    </if>
+</block>
+
+<block name="pagecont">
+<STYLE TYPE="text/css"> 
+    <!-- 
+    .error{ color:#900; float:right}
+    --> 
+</STYLE>
+    <div id="main-container">
+        <div class="padding-md">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>疾病编辑</h3>
+                </div>
+                <div class="panel-body">
+                    <form id="formToggleLine" class="form-horizontal no-margin form-border" action="__ACTION__" method="post">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">疾病名称</label>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" placeholder="请输入疾病名称"  data-required="true"  name="name" id="title" value="{$data.name}">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">疾病类型</label>
+                            <div class="col-lg-6">
+                                <select class="form-control"  name="pid" >
+                                    <option>{$data.pid}</option>
+                                    
+                                 <volist name='diseasepid' id='vo'>
+                                    <option>{$vo.name}</option>
+                                 </volist>
+                                  </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">疾病物种</label>
+                            
+                            <div class="col-lg-6"> 
+                                  <select class="form-control"  name="type">
+                                    <option>{$data.type}</option>
+                                    <option>鱼类</option>
+                                    <option>贝类</option>
+                                    <option>甲壳类</option>
+                                     <option>其他类</option>
+                                  </select>
+                                                            
+                            </div>
+                        </div>
+                       
+                         <div class="form-group">
+                            <label class="col-lg-2 control-label">疾病内容</label>
+                            <div class="col-lg-10">
+                                <textarea class="form-control" rows="5"  name="ct">{$data.content}</textarea>
+                                <script type="text/javascript">
+                                            var editor = null;
+                                            window.onload = function(){
+                                                editor = CKEDITOR.replace('ct',{height : 350,
+                                    width : 800}); 
+                                            }
+                                </script>
+                            </div>
+                        </div>                       
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="hidden" name="act" value="{$act}"/>
+                                <input type="hidden" name="id" value="{$data.id}"/>
+                                <button type="submit" class="btn btn-success">保存</button>
+                                <a href="{:U('diseases/diseasesmgr')}" type="reset" class="btn btn-danger">取消</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

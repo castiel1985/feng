@@ -1,0 +1,89 @@
+<extend name="Public:base_report"/>
+<title><block name="title">用户报告</block></title>
+<block name="extcss"><link rel="stylesheet" type="text/css" href='__PUBLIC__/Index/Css/lightbox.css' /></block>
+<block name="extjs"><script type="text/javascript" src="__PUBLIC__/Index/Js/lightbox.js"></script></block>
+<block name="main">
+    <div id="main">
+    <div style="margin:0 auto; width:1000px; height:auto;">
+          
+    <div id="report" style="width:100%">
+   
+        <h3>用户报告<span style="float: right; margin-right: 50px;"></span><span style="color: #f60; margin-left: 30px">编号：{$data.uuid}</span><span style=" float: right">生成时间：{$data.date}</span></h3>
+                    
+            <div id="report-detail">
+                
+                <table width="838" border="0" class="tb2" >
+                    
+                    <tr>
+                        <td height="200" colspan="2" >
+                            
+                            <h3><span class="title">基本信息</span></h3>
+                            <table width="750" border="0" class="tb1">
+
+                                <tr>
+                                  <td height="50">发起用户：{$data.from_userid|truename}</td>
+                                  <td>受理专家：{$data.to_userid|truename}</td>
+                                  <td>渔业物种：{$data.classid|classname}</td>
+                                </tr>
+                                <tr>
+                                  <td height="50">物种大小：{$data.size}</td>
+                                  <td>养殖面积：{$data.area}&nbsp;&nbsp;{$data.unit}</td>
+                                  <td>池塘水深：{$data.deep}</td>
+                                </tr>
+                              </table>
+                            
+                        </td>
+                    </tr>
+                    <tr >
+                        <td width="100" height="120" align="center"><span class="title">上传的图片</span></td>
+                      <td width="689">                     
+<table width="700" height="100" border="0" align="center" cellpadding="0" cellspacing="0" class="tb3">（点击图片放大）
+  <tr>
+    <td align="center">
+
+         <volist name="img" id="vo">
+            <span class="miniimg">
+               <a href="{$vo}" rel="lightbox"><img src="{$vo}@0e_0o_0l_80h_80w_90q" name="picboder" width="60" height="60" border="0" id="picboder"/></a>                               
+            </span>
+         </volist>
+    </td>
+  </tr>
+</table>
+                      
+                      
+                      
+                      
+                      </td>
+                    </tr>
+                    <tr>
+                        <td height="200" align="center"><span class="title">水环境描述</span></td>        
+                            
+                            
+                     <td height="200">  
+                         <div class="tdcontent">
+                             <p> {$data.water_desc}</p>
+                         </div>
+                     </td>
+                    </tr>
+                    <tr>
+                        <td height="200" align="center"> <span class="title">疾病描述</span></td>
+                         <td height="200"> 
+                             <div class="tdcontent">
+                                 <p>{$data.disease_desc}</p>                   
+                             </div>
+                         </td>
+                    </tr>
+                  </table>
+                
+                
+                
+            </div>
+    
+    </div> 
+ 
+                   
+    </div>              
+                   
+
+</div>
+</block> 

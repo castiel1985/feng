@@ -1,0 +1,90 @@
+<extend name="Public:base"/>
+<block name='diseasesmenu'>active</block>
+<block name='diseasessubmgr2'>active</block>
+<block name="extjs">
+    <!-- Parsley -->
+    <script type="text/javascript" src="__APP__/public/ckeditor/ckeditor.js"></script>
+</block>
+
+<block name="pagecont">
+<STYLE TYPE="text/css"> 
+    <!-- 
+    .error{ color:#900; float: right}
+    --> 
+</STYLE>
+    <div id="main-container">
+        <div class="padding-md">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>疾病分类项目编辑</h3>
+                </div>
+                <div class="panel-body">
+                    <form id="formToggleLine" class="form-horizontal no-margin form-border" action="__ACTION__" method="post">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">疾病分类项目名称</label>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" placeholder="请输入疾病分类名称"  data-required="true"  name="name" id="name" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">适用物种类型</label>
+                            <div class="col-lg-6">
+                                                        <label class="label-radio inline">
+
+							<input type="radio" name="typeid" value="1"  >
+
+							<span class="custom-radio"></span>
+
+							鱼类
+
+							</label>
+
+							<label class="label-radio inline">
+
+							<input type="radio" name="typeid" value="2" >
+
+							<span class="custom-radio"></span>
+
+							贝类
+
+							</label>
+ 							<label class="label-radio inline">
+
+							<input type="radio" name="typeid" value="3"   >
+
+							<span class="custom-radio"></span>
+
+							甲壳类
+
+							</label>
+ 							<label class="label-radio inline">
+
+							<input type="radio" name="typeid" value="4"   >
+
+							<span class="custom-radio"></span>
+
+							其他类
+
+							</label>   
+                            </div>
+                        </div>
+                        
+      
+                            </div>
+                        </div>
+                                             
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="hidden" name="act" value="{$act}"/>
+                                <input type="hidden" name="classid" value="{$data.classid}"/>
+                                <button type="submit" class="btn btn-success">保存</button>
+                                <a href="{:U('diseases/categorymgr')}" type="reset" class="btn btn-danger">取消</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

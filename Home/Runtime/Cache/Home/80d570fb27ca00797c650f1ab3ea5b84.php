@@ -1,0 +1,1 @@
+<?php if (!defined('THINK_PATH')) exit();?><div>Sorry! 输入错误，请登录主页</div>

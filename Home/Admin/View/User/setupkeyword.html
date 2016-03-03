@@ -1,0 +1,53 @@
+<extend name="Public:base"/>
+<block name='usersmenu'>active</block>
+<block name='usersubmgr'>active</block>
+<block name="extjs">
+    <!-- Parsley -->
+    <script type="text/javascript" src="__APP__/public/ckeditor/ckeditor.js"></script>
+
+</block>
+
+<block name="pagecont">
+
+    <div id="main-container">
+        <div class="padding-md">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>密码设置</h3>
+                </div>
+                <div class="panel-body">
+                    <form id="formToggleLine" class="form-horizontal no-margin form-border" action="__ACTION__" method="post">
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">用户帐号</label>
+                            <div class="col-lg-4">
+                                <input class="form-control" type="text"  data-required="true"  name="username" id="classname" value="{$data.username}"  readonly= "true ">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">用户新密码</label>
+                            <div class="col-lg-4">
+                                   <input class="form-control" type="password"  data-required="true"  name="password" id="classname" >                     
+                            </div>
+                        </div>  
+                        
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">再次输入新密码</label>
+                            <div class="col-lg-4">
+                                    <input class="form-control" type="password"  data-required="true"  name="notpass" id="classname" >                  
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label"></label>
+                            <div class="col-lg-10">
+                                <input type="hidden" name="act" value="{$act}"/>
+                                <input type="hidden" name="classid" value="{$data.classid}"/>
+                                <button type="submit" class="btn btn-success">保存</button>
+                                <a href="{:U('User/usermgr')}" type="reset" class="btn btn-danger">取消</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</block>

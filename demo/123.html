@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+
+
+
+    <form action="index.php" method="post">
+        鱼类：<input type="radio" checked="checked" name="class" value="1" />&nbsp;&nbsp;&nbsp;&nbsp;贝类：<input type="radio" name="class" value="2" />&nbsp;&nbsp;&nbsp;&nbsp;甲壳类：<input type="radio" name="class" value="3" />&nbsp;&nbsp;&nbsp;&nbsp;其他：<input type="radio" name="class" value="4" />
+                                    <input type="submit" />
+                                    
+                                    
+                                    
+                                                       <label class="label-radio inline">
+
+							<input type="radio" name="type" value="1"  <if condition="($data.typeid eq '1')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							鱼类
+
+							</label>
+
+							<label class="label-radio inline">
+
+							<input type="radio" name="type" value="2"  <if condition="($data.typeid eq '2')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							贝类
+
+							</label>
+ 							<label class="label-radio inline">
+
+							<input type="radio" name="type" value="3"  <if condition="($data.typeid eq '3')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							甲壳类
+
+							</label>
+ 							<label class="label-radio inline">
+
+							<input type="radio" name="type" value="4"  <if condition="($data.typeid eq '4')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							其他类
+
+							</label>     
+                                    
+                                    
+                                    
+                                                        <label class="label-radio inline">
+
+							<input type="radio" name="type" value="4"  <if condition="($data.typeid eq '4')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							其他类
+
+							</label>     
+                                                        <label class="label-radio inline">
+
+							<input type="radio" name="type" value="4"  <if condition="($data.typeid eq '4')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							其他类
+
+							</label> 
+                                    
+                                    
+                                    
+                                                        <label class="label-radio inline">
+
+							<input type="radio" name="type" value="0"  <if condition="($data.water eq '0')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							海水
+
+							</label>     
+                                                         <label class="label-radio inline">
+
+							<input type="radio" name="type" value="0"  <if condition="($data.water eq '1')">checked='checked' </if> >
+
+							<span class="custom-radio"></span>
+
+							淡水
+
+							</label>     
+                                                                       
+                                    
+    </form>
+</body>
+</html>

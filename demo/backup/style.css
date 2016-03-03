@@ -1,0 +1,206 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0; list-style-type:none; font-size:12px; color:#666}
+
+/* 头部样式 */
+#top{ margin:0 auto; width:100%; height:150px; border:0px solid #333;margin-top:5px; background-image:url(images/bannner-bg.jpg); background-repeat:repeat-x}
+#log{ margin:0 auto; width:1000px; height:150px; border:0px solid #ccc;margin-top:5px; background-image:url(images/banner.jpg); background-repeat:no-repeat}
+#nav{ margin:0 auto; width:1000px; height:50px;margin-top:0px; border:0px solid #999; }
+#nav li {float:left; height:50px; width:120px;text-align:center; line-height:50px; display:inline; font-size:15px; font-weight:bolder}
+#nav li a{ float:left; height:50px; width:120px; border:0px solid #f00; text-align:center; line-height:50px; display:inline; font-size:15px; font-weight:bolder;color:#FFF; background-image:url(images/li.png) }
+#nav li a:hover{ text-decoration:none; background-image:url(images/li2.jpg);height:50px;}
+
+
+/*时间滚动新闻体样式 */
+#time{ width:1000px; margin:0 auto; border:1px solid #ddd; height:35px; margin-top:10px}
+#time img{float:left; display:inline; margin-left:15px}
+#time .scrollDiv{float:left; display:inline;width:500px;height:30px;line-height:30px;border:#ccc 0px solid;overflow:hidden; margin-left:10px}
+#time .scrollDiv li{height:30px;padding-left:10px;}
+#time .date{float:right; display:inline;border:0px solid #666; width:250px;height:30px;line-height:30px;}
+#time font{ font-size:18px; color:#777}
+#time .scrollDiv li:hover{ color:#F00; cursor:pointer}
+
+/* 主体样式 */
+#main{ margin:0 auto; width:1000px; height:auto; border:0px solid #ccc; margin-top:5px; margin-bottom:5px}
+#main1{width:1000px; height:260px; border:0px solid #ccc;margin-top:5px;}
+#main1-1{ float:left; display:inline;width:300px; height:240px; border:0px solid #639; margin:10px 10px 10px 0}
+#main1-2{float:left; display:inline;width:400px; height:240px;margin:10px;border:1px solid #ddd; background-image:url(images/%E6%A9%98%E8%89%B22.jpg)}
+#main1-2 ul{width:360px; height:220px; border:0px #F00 solid; margin:10px}
+#main1-2 ul li{ padding:5px; text-indent:2em}
+#main1-2 ul li a:hover{color:#F00; cursor:pointer}
+#main1-2 p{ line-height:40px; height:40px;text-indent:1em;font-weight:bolder;font-size:15px;}
+#main1-2 p span a{float:right;margin-right:12px;color:#F00; font-weight:bolder}
+#main1-2 ul li span{ float:right}
+#main1-2 ul li span a{color:#F00; font-weight:bolder}
+#main1-3{float:left; display:inline;width:260px; height:240px;margin:10px 0px 10px 10px; padding:10px 0 0 10px; border:0px #ddd solid }
+#main1-3 form{ margin:40px 10px 10px 0; }
+#main1-3 form button{ margin-left:10px; width:60px}
+
+/* CSS loggin样式 */
+*{margin:0;padding:0;word-wrap:break-word;word-break:break-all;}
+a{text-decoration:none;color:#555;}
+.tabPanel ul{height:40px;border-bottom:1px solid #ddd;}
+.tabPanel ul li{
+	float:left;margin:0 2px 0 0;border:1px solid #ddd;font-size:12px;height:40px;line-height:40px;width:119px;text-align:center;cursor:pointer;
+	text-shadow:0 1px 0 #fff;
+	border-radius:4px 4px 0 0;
+	box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	background:#ddd;
+	background:-moz-linear-gradient(top, #eee, #ddd);
+	background:-webkit-gradient(linear, left top, left bottom, from(#ffeed0), to(#eee));
+}
+.tabPanel .hit{
+	border-bottom:1px solid #fff;cursor:pointer;color:black;text-shadow:0 1px 0 #fff;
+	background:#fff;
+	background:-webkit-gradient(linear, left top, left bottom, from(#ffeed0), to(#fff));
+	background:-moz-linear-gradient(top, #ffeed0, #fff);
+}
+.pane{border-top:0;min-height:100px;background-color:#fff;display:none;}
+.pane p{padding:15px 15px 0 10px;}
+.pane h4{padding:15px 15px 0 10px;font-size:14px;font-weight:bold;}
+.pane input{ width:130px; height:30px; line-height:30px; border:1px solid #bbb}
+.pane label{ width:50px; height:30px; line-height:30px}
+.pane button{ margin:auto 0}
+
+
+#main2{width:1000px; height:260px; margin-top:5px;}
+#main2-1{ float:left; display:inline; width:490px; margin:10px 10px 10px 0 ;border:1px solid #ddd; background-image:url(images/%E8%A7%84%E7%AB%A0%E5%88%B6%E5%BA%A61-1.jpg)}
+#main2-1 p{ line-height:40px; height:40px;text-indent:2em;font-weight:bolder;font-size:15px;}
+#main2-1 p span a{float:right;margin-right:12px;color:#F00; font-weight:bolder}
+#main2-1 ul li span{ float:right; margin-right:12px}
+#main2-1 ul li{padding:5px; text-indent:11em}
+#main2-1 ul li a:hover{color:#F00; cursor:pointer}
+#main2-2{ float:left; display:inline; width:490px; margin:10px 0 10px 10px ;border:1px solid #ddd; background-image:url(images/%E9%A2%84%E6%B5%8B%E9%A2%84%E6%8A%A51-1.jpg)}
+#main2-2 p{ line-height:40px; height:40px; text-indent:2em;font-weight:bolder;font-size:15px;}
+#main2-2 p span a{float:right;margin-right:12px; color:#F00;font-weight:bolder}
+#main2-2 ul li span{ float:right; margin-right:12px}
+#main2-2 ul li{padding:5px; text-indent:11em}
+#main2-2 ul li a:hover{color:#F00; cursor:pointer}
+#main3{width:1000px; height:270px; border:1px solid #ddd;margin-top:5px; background-image:url(images/%E6%A9%98%E8%89%B21-3.jpg)}
+#main3 p{ line-height:40px; height:40px;text-indent:1em; font-weight:bolder;font-size:15px;}
+#main4{width:1000px; height:230px; border:1px solid #ddd;margin-top:15px; background-image:url(images/1000%20230.jpg)}
+#main4 p{ line-height:40px; height:40px;text-indent:1em; font-weight:bolder;font-size:15px;}
+#main4 img { width:180px; margin-left:2px; border:1px solid #CCC}
+
+
+/* 尾部样式 */
+#foot{ margin:0 auto; width:1000px; height:120px; border:0px solid #ccc; padding-top:15px; clear:both; padding-top:30px;}
+#foot p{ display:block; text-align:center; margin-top: 5px;}
+
+
+/* 注册样式 */
+#reg{ width:980px; height:auto; margin:10px; border:0px #ccc solid; padding:5px 20px;}
+#reg h3{height:35px; line-height:35px; font-size:20px; text-indent:1em}
+#reg h4{ text-align:center; font-weight:bolder;font-size:30px;}
+#reg button{ margin-left:400px}
+#reg p{text-indent:3em}
+
+
+/* aboutus样式 */
+#aboutus{width:980px; height:auto; margin:10px; border:0px #ccc solid; padding:5px 20px;}
+#aboutus h3{height:35px; line-height:35px; font-size:20px;text-indent:1em}
+#aboutus h4{text-align:center; font-weight:bolder;font-size:30px;}
+#aboutus p{text-indent:3em;line-height:200%}
+
+/* news样式 */
+#news{ float:left; display:inline;width:750px; height:800px;  border:1px #ddd solid; padding:15px 30px;background-image:url(images/title.jpg); background-repeat:repeat-x}}
+#news h3{ height:35px; line-height:35px; font-size:20px;  text-indent:1em}
+#news p{text-indent:3em}
+#news ul{ padding:10px; border:0px solid #F00}
+#news ul li{margin:15px;border:0px #f00 solid;}
+#news ul li a{ height:25px; line-height:25px}
+#news ul li a:hover{ color:#F00}
+#news ul li span{ float:right; margin-right:20px }
+#news h4{ text-align:center; font-weight:bolder}
+#news-right{ float:right; display:inline; width:200px; height:300px;border:1px #ddd solid; padding:15px  30px;background-image:url(images/title.jpg); background-repeat:repeat-x}
+#news-right h3{height:35px; line-height:35px; font-size:20px; text-indent:1em}
+#news-right ul li{margin:15px;}
+#news-right ul li a:hover{ color:#F00}
+
+
+
+/*  diaease样式 */
+#disease-top{width:980px; height:auto; margin:10px; padding:5px 20px; }
+#disease-top ul{ width:100%; height:auto;}
+#disease-top ul li{ float:left; display:inline; margin:2px;border:1px #fff solid; padding:0px;}
+#disease-top ul li p{ text-align:center;}
+#disease-top ul li a{ width:100px;margin:0 auto;display:block;}
+.selectlinkbtn{border:1px #960 solid; color:#F00; font-weight:bolder }
+#disease-content{width:100%; height:auto; border-top:1px #ddd solid; margin-top:230px; padding-top:15px}
+#disease-content h4{ text-align:center; font-weight:bolder}
+#disease-content h4 span{ color:#F00; font-size:20px}
+#disease-content .left{ float:left; width:250px; height:auto; display:inline;}
+#disease-content .right{ float:right; width:720px; height:auto; display:inline;}
+#disease-content .right p{ font-size:20px; margin:20px}
+
+/*  article样式 */
+#article{ width:980px; height:auto; margin:10px; padding:5px 20px; overflow:hidden}
+#article h3{ height:35px; line-height:35px; font-size:20px;  text-indent:1em }
+#article .title{ text-align:center; font-size:30px; font-weight:bolder; margin-bottom:20px}
+#article .source{ text-align:center}
+#article .source span{ margin-left:20px}
+#article .content{ width:100%; height:auto; margin-top:10px; padding:10px}
+#article .content p{ text-indent:2em; line-height:200%}
+
+/*  consult样式 */
+#consult{ width:980px; height:auto; margin:10px; padding:5px 20px; overflow:hidden; border:0px #F00 solid;}
+#consult h3{ height:35px; line-height:35px; font-size:20px;  text-indent:1em }
+#consult .content{ width:100%; height:200px; border:0px solid #666}
+#consult .content .div1{ float:left; display:inline; border:1px #CCC solid; margin:2px; width:230px; height:200px}
+#consult .content .div1 p{ height:38px; line-height:40px; text-align:center; background:#36F; color:#FFF; font-weight:bolder}
+#consult .content .div2{ float:left; display:inline; border:0px #CCC solid; margin:2px; width:40px; height:200px; background-image:url(images/jiantou.png); background-repeat:no-repeat}
+#consult .content .div3{ float:left; display:inline; border:1px #CCC solid; margin:2px; width:550px; height:200px; padding:0; background-image:url(images/div3.png); background-repeat:no-repeat}
+#consult .content .div3 .sea{ width:100%; height:100px; border-bottom:1px #CCC solid}
+#consult .content .div3 .fresh{ width:100%; height:100px; }
+#consult .content .div3 ul{ margin:7px 0 5px 70px; border:0px #F00 solid; width:470px; height:80px}
+#consult .content .div3 ul li{ float:left; display:inline; padding:3px}
+#consult .content .div3 ul li:hover{ background:#ff9933;cursor:pointer;}
+#consult .content .div3 .select{background:#ff9933; color:#f00; font-weight:bolder}
+#consult .content .div4{ float:left; display:inline; border:0px #CCC solid; margin:2px; width:100px; height:200px; background-image:url(images/div4.png); background-repeat:no-repeat}
+#consult .content .div4 p{ display:block; height:80px; width:98px; border:0px solid #ddd; margin-top:60px}
+#consult .content .div4 p:hover{cursor:pointer;}
+
+
+/*  专家样式 */
+#professor{float:left; display:inline;width:740px; height:auto;  border:1px #ddd solid; padding:15px 30px;background-image:url(images/title.jpg); background-repeat:repeat-x}
+#professor h3{height:35px; line-height:35px; font-size:20px; text-indent:1em}
+#professor h4{height:20px; line-height:20px; font-size:15px; text-indent:1em;}
+#professor .div1{ width:100%; height:200px; }
+#professor .div1 img{ float:left; display:inline; margin:15px}
+#professor .div1 .div1-right{float:left; display:inline; border:0px solid #999; width:500px; height:200px; padding-top:30px; font-weight:bolder}
+#professor .div2{ width:100%; height:auto; }
+#professor .div2 .content{ width:90%; height:auto; border:0px #CCC solid; margin:20px}
+#professor .div2 .content p{ text-indent:2em; line-height:200%}
+#professor .div3{ width:100%; height:auto; }
+#professor .div4{ width:100%; height:auto; padding-left:20px}
+#professor .div4 button{ margin-left:300px}
+#professor-right{ float:right; display:inline; width:250px; height:auto;border:1px #ddd solid; padding:15px  2px;background-image:url(images/title.jpg); background-repeat:repeat-x}
+#professor-right ul li{ margin-bottom:2px}
+#professor-right h3{text-indent:1em}
+
+
+
+/*  省市样式 */
+#area { width:980px; height:650px; margin:10px; padding:5px 20px; overflow:hidden}
+#area .letter{ width:100%; height:30px; list-style:none}
+#area .letter li{ float:left; height:30px; line-height:30px; border:1px #CCC solid; margin-left:2px; width:30px; text-align:center; font-size:18px; display:inline}
+#area .letter li:hover{ border:1px solid #ff9933;}
+#area .province a{ width:100px; height:100px; float:left; display:inline; border:1px solid #CCC; margin:8px}
+#area .province a div{width:100px; height:100px;}
+#area .province .p1{ height:50px; line-height:50px; font-size:25px; font-weight:bolder; text-align:center}
+#area .province .f16{ height:20px; line-height:20px; font-size:16px; text-align:center}
+#area .province .p1:hover{ text-decoration:none; color:#ff9933}
+#area .province .f16:hover{ text-decoration:none; color:#ff9933}
+#area .province a:hover{text-decoration:none;color:#ff9933}
+#area .province .select{ background-color:#ff9933; color:#FFF}
+
+
+
+
+
+
+
+
+
+

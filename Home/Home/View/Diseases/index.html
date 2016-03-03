@@ -1,0 +1,222 @@
+<extend name="Public:base"/>
+<block name="title">渔业常见疾病</block>
+<block name="extcss"><link rel="stylesheet" type="text/css" href='__PUBLIC__/Index/Css/zTreeStyle.css' /></block>
+<block name="extjs"><script type="text/javascript" src="__PUBLIC__/Index/Js/jquery.ztree.core-3.5.js"></script></block>
+<block name="main">
+<div id="main">
+ <script type="text/javascript">
+        var setting = {
+            view: {
+                showLine: true,
+                selectedMulti: false,
+                dblClickExpand: false
+            },
+            data: {
+                simpleData: {
+                    enable: true,
+		    pIdKey: "pid"
+                }
+            }
+            , callback: {
+                beforeExpand: beforeExpand,
+                onExpand: onExpand,
+                onClick: onClick
+            }
+        };
+       
+        $(document).ready(function () {
+            createTree(1);
+            if(''!='')
+            {
+                getContent('');
+            }
+
+       });
+       var zTree = null;
+       function beforeClick(treeId, treeNode, clickFlag) {
+         
+       }
+
+       var curExpandNode = null;
+       function beforeExpand(treeId, treeNode) {
+           var pNode = curExpandNode ? curExpandNode.getParentNode() : null;
+           var treeNodeP = treeNode.parentTId ? treeNode.getParentNode() : null;
+           var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+           for (var i = 0, l = !treeNodeP ? 0 : treeNodeP.children.length; i < l; i++) {
+               if (treeNode !== treeNodeP.children[i]) {
+                   zTree.expandNode(treeNodeP.children[i], false);
+               }
+           }
+           while (pNode) {
+               if (pNode === treeNode) {
+                   break;
+               }
+               pNode = pNode.getParentNode();
+           }
+           if (!pNode) {
+               singlePath(treeNode);
+           }
+
+       }
+       function singlePath(newNode) {
+           if (newNode === curExpandNode) return;
+
+           var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+                   rootNodes, tmpRoot, tmpTId, i, j, n;
+
+           if (!curExpandNode) {
+               tmpRoot = newNode;
+               while (tmpRoot) {
+                   tmpTId = tmpRoot.tId;
+                   tmpRoot = tmpRoot.getParentNode();
+               }
+               rootNodes = zTree.getNodes();
+               for (i = 0, j = rootNodes.length; i < j; i++) {
+                   n = rootNodes[i];
+                   if (n.tId != tmpTId) {
+                       zTree.expandNode(n, false);
+                   }
+               }
+           } else if (curExpandNode && curExpandNode.open) {
+               if (newNode.parentTId === curExpandNode.parentTId) {
+                   zTree.expandNode(curExpandNode, false);
+               } else {
+                   var newParents = [];
+                   while (newNode) {
+                       newNode = newNode.getParentNode();
+                       if (newNode === curExpandNode) {
+                           newParents = null;
+                           break;
+                       } else if (newNode) {
+                           newParents.push(newNode);
+                       }
+                   }
+                   if (newParents != null) {
+                       var oldNode = curExpandNode;
+                       var oldParents = [];
+                       while (oldNode) {
+                           oldNode = oldNode.getParentNode();
+                           if (oldNode) {
+                               oldParents.push(oldNode);
+                           }
+                       }
+                       if (newParents.length > 0) {
+                           zTree.expandNode(oldParents[Math.abs(oldParents.length - newParents.length) - 1], false);
+                       } else {
+                           zTree.expandNode(oldParents[oldParents.length - 1], false);
+                       }
+                   }
+               }
+           }
+           curExpandNode = newNode;
+       }
+
+       function onExpand(event, treeId, treeNode) {
+           curExpandNode = treeNode;
+       }
+
+       function onClick(event, treeId, treeNode, clickFlag) {
+          
+           if(treeNode.pid==null)
+           {
+               
+               zTree.expandNode(treeNode, null, null, null, true);
+           }
+           else
+           { 
+               getContent(treeNode.id);
+           }
+       }
+       function getContent(pid)
+       {
+          
+           $.ajax({
+               url: '/Diseases/GetContent', //url  action是方法的名称
+               data: { id:pid},
+               type: 'Get',
+               dataType: "html",
+               success: function (data) {
+
+                   $("#content").html(data);
+               },
+               error: function (msg) {
+                   alert(" 数据加载失败！" + msg);
+               }
+           });
+       }
+
+
+       function createTree(typeid) {
+           $(".linkbtn").text("请选择");
+           $("#linkbtn" + typeid).text("已选择");
+           $("#diseasetype").text($("#linkdiv" + typeid + " a:first").text());
+           $(".tabbtn").removeClass("selectlinkbtn");
+            
+           $("#linkdiv" + typeid).addClass("selectlinkbtn");
+
+            $.ajax({
+                url: '/Diseases/getdisease', //url  action是方法的名称
+                data: { typeid: typeid },
+                type: 'Get',
+                dataType: "json",
+                success: function (data) { 
+                    zTree = $.fn.zTree.init($("#treeDemo"),setting,data.records);
+                  var nodes = zTree.getNodes();
+                  zTree.expandNode(nodes[0], true, null, null, null);
+
+                },
+                error: function (msg) {
+                    alert(" 数据加载失败！" + msg);
+                }
+            });
+        }
+    </script>
+
+    <div style="margin:0 auto; width:1000px; height:auto; min-height:700px; border:1px solid #ccc;background-image:url(__PUBLIC__/Index/images/title.jpg); background-repeat:repeat-x ">
+           <div id="disease-top">
+          	   <h3><img src="__PUBLIC__/Index/images/dt.png" >常见疾病</h3><hr>
+              	<ul class="top">
+                	<li onclick="createTree(1)">
+                    	<div id="linkdiv1"  class="tabbtn">
+                    <img src="__PUBLIC__/Index/images/fish1.png"/>
+                    <p><a href="javascript:void(0)" >鱼类</a></p>
+                    <a class="btn btn-primary linkbtn"  id="linkbtn1" >请选择</a> </div></li>
+                    
+                 	<li onclick="createTree(2)">
+                    	<div id="linkdiv2" class="tabbtn">
+                    <img src="__PUBLIC__/Index/images/fish2.png"/>
+                    <p><a href="javascript:void(0)" >贝类</a></p>
+                    <a class="btn btn-primary linkbtn"  id="linkbtn2">请选择</a></div></li>                   
+                    
+                 	<li onclick="createTree(3)">
+                    	<div id="linkdiv3" class="tabbtn">
+                    <img src="__PUBLIC__/Index/images/fish3.png"/>
+                    <p><a href="javascript:void(0)" >甲壳类</a></p>
+                    <a class="btn btn-primary linkbtn"  id="linkbtn3">请选择</a></div></li>                   
+                    
+                 	<li onclick="createTree(4)">
+                    	<div id="linkdiv4" class="tabbtn">
+                    <img src="__PUBLIC__/Index/images/fish4.png"/>
+                    <p><a href="javascript:void(0)" >其他</a></p>
+                    <a class="btn btn-primary linkbtn"  id="linkbtn4">请选择</a></div></li>                   
+                </ul>
+            </div>
+            <div id="disease-content">
+                	<h4><span id="diseasetype">鱼类</span>常见疾病描述及处理方法</h4>
+                	<div class="left">
+                        <div class="zTreeDemoBackground left">
+                            <ul id="treeDemo" class="ztree"></ul>
+                        </div>           
+                    </div>
+                
+                	<div class="right">
+                   		 <div id="content" style="padding:10px;">点击左侧查看详细信息</div>
+                    
+                    </div>
+                
+                </div>         
+
+     </div>   
+                   
+</div>              
+</block>
