@@ -4512,7 +4512,7 @@ function View(element, calendar, viewName) {
 					trigger('eventMouseout', this, event, ev);
 				}
 			);
-		// TODO: don't fire eventMouseover/eventMouseout *while* dragging is occuring (on subject element)
+		// TODO: don't fire eventMouseover/eventMouseout *while* dragging is occurring (on subject element)
 		// TODO: same for resizing
 	}
 	

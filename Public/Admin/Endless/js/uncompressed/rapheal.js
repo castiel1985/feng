@@ -3207,7 +3207,7 @@
      * Raphael.el
      [ property (object) ]
      **
-     * You can add your own method to elements. This is usefull when you want to hack default functionality or
+     * You can add your own method to elements. This is useful when you want to hack default functionality or
      * want to wrap some common transformation or attributes in one method. In difference to canvas methods,
      * you can redefine element method at any time. Expending element methods wouldn’t affect set.
      > Usage

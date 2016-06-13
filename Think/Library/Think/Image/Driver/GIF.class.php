@@ -431,7 +431,7 @@ Class GIFDecoder {
 			/*
 			 * 07.05.2007.
 			 * Implemented a new line for a new function
-			 * to determine the originaly delays between
+			 * to determine the originally delays between
 			 * frames.
 			 *
 			 */

@@ -4293,7 +4293,7 @@ tree.Operation.prototype = {
                     temp = b, b = a, a = temp;
                 } else {
                     throw { type: "Operation",
-                            message: "Can't substract or divide a color from a number" };
+                            message: "Can't subtract or divide a color from a number" };
                 }
             }
             if (!a.operate) {
