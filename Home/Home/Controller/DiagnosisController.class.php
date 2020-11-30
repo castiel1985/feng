@@ -114,8 +114,6 @@ class DiagnosisController extends Controller {
             'rootPath' => '/',   
          );
         $oss_config = array(
-            'access_id'  => 'TyCHc67E2Bbc3eyl', //阿里云Access Key ID
-            'access_key' => 'TyfB8IwQpTikdpPjqR6FE1hLE2VeiA', //阿里云Access Key Secret
             'bucket'     => 'tmp-lim',
          );
         $upload =new \Think\Upload($config, 'Oss', $oss_config);; //实例化上传类
